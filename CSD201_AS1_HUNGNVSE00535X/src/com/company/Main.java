@@ -1,14 +1,16 @@
 package com.company;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 	    // write your code here
         Scanner input = new Scanner(System.in);
         System.out.println("Welcome to  the sort and search on a real number application.");
         System.out.println();
+        Algorithm algorithm = new Algorithm();
         while (true) {
             System.out.println("+-------------------Menu------------------+");
             System.out.println("1. Input");
@@ -21,14 +23,11 @@ public class Main {
             System.out.println("0. Exit");
             System.out.print("Your choice: ");
             int choice = 0;
-            if (choice == 0) {
-                System.out.println("Good bye, have a nice day!");
-                break;
-            }
+
             while (input.hasNext()) {
                 if (input.hasNextInt()) {
                     choice = Integer.parseInt(input.nextLine());
-                    if (choice >= 1 && choice <= 7) {
+                    if (choice >= 0 && choice <= 7) {
                         break;
                     }
                     System.out.print("Your choice: ");
@@ -38,8 +37,37 @@ public class Main {
                     input.nextLine();
                 }
             }
-            switch (choice) {
 
+            if (choice == 0) {
+                System.out.println("Good bye, have a nice day!");
+                break;
+            }
+
+            switch (choice) {
+                case 1:
+                    algorithm.writeFile();
+                    break;
+                case 2:
+                    algorithm.readFile();
+                    break;
+                case 3:
+                    algorithm.bubbleSort();
+                    break;
+                case 4:
+                    algorithm.selectionSort();
+                    break;
+                case 5:
+                    algorithm.insertionSort();
+                    break;
+                case 6:
+                    algorithm.search();
+                    break;
+                case 7:
+                    algorithm.binarySearch();
+                    break;
+                case 8:
+                    System.out.println("Good bye, have a nice day!");
+                    System.exit(0);
             }
         }
     }

@@ -4,7 +4,7 @@ public class Main {
 
     public static void main(String[] args) {
         // write your code here
-        int[] b = {5, 7, 11, 3, 9, 2, 6};
+        int[] b = {9,3,5,6,1,2,4};
         SimpleSort t = new SimpleSort(b);
         t.bubbleSort();
     }
