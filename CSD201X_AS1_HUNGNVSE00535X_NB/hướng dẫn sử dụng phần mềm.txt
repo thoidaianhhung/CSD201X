@@ -1,0 +1,3 @@
+E sử dụng IDE Intelliji.
+JDK 14
+Chương trình có luồng chạy từ lựa chọn 1 => 2. Từ 2 chọn bất kỳ lựa chọn nào trong số lựa chọn từ 3 đến 7.
