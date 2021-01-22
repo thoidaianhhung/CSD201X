@@ -8,9 +8,7 @@ public class MyList {
     boolean isEmpty() {
         return (head == null);
     }
-    void clear() {
-        head = tail = null;
-    }
+
     void addLast(int x) {
         Node q = new Node(x);
         if (isEmpty()) {
@@ -21,8 +19,8 @@ public class MyList {
         tail = q;
     }
     void addMany(int[] a) {
-        for (int i = 0; i < a.length; i++) {
-            addLast(a[i]);
+        for (int j : a) {
+            addLast(j);
         }
     }
     void visit(Node p) {
@@ -35,5 +33,22 @@ public class MyList {
             p = p.next;
         }
     }
+    void sort() {
+        Node pi, pj;
+        int t;
+        pi = head;
+        while (pi != null) {
+            pj = pi.next;
+            while (pj != null) {
+                if (pj.info < pi.info) {
+                    t = pi.info;
+                    pi.info = pj.info;
+                    pj.info = t;
+                }
+                pj = pj.next;
+            }
+            pi = pi.next;
+        }
 
+    }
 }

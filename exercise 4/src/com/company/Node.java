@@ -1,14 +1,15 @@
 package com.company;
 
 public class Node {
-    int info;
+    Person info;
     Node next;
 
-    Node(int x, Node p) {
+    Node(Person x, Node p) {
         info = x;
         next = p;
     }
-    Node(int x) {
-        this(x, null);
+
+    Node(Person x) {
+        this (x, null);
     }
 }
