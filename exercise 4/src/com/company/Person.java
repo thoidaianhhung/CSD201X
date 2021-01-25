@@ -10,4 +10,8 @@ public class Person {
     public String toString() {
         return name + " " + age;
     }
+
+    public String getName () {
+        return name;
+    }
  }
