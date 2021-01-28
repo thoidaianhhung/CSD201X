@@ -10,7 +10,11 @@ public class Main {
         System.out.println("\n Before sorting:");
         t.traverse();
         System.out.println("\n After sorting:");
-        t.sort();
+        Node n = t.head;
+        while (n.next != null) {
+            n = n.next;
+        }
+        t.sort(t.head, n);
         t.traverse();
         System.out.println();
     }

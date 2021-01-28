@@ -1,7 +1,5 @@
 package com.company;
 
-import java.security.cert.X509Certificate;
-
 public class MyList {
     Node head;
 
@@ -33,34 +31,27 @@ public class MyList {
 
     public void deleteNode(String key) {
         Node temp = head;
-        Node prev = null;
 
         int x = temp.getInfo().getProductCode().compareTo(key);
-        if (temp != null && x == 0) {
+        if (x == 0) {
             head = temp.getNext();
             return;
         }
 
-        while (temp != null && x != 0) {
-            prev = temp;
+        while (temp != null) {
             temp = temp.getNext();
         }
-
-        if (temp == null) return;
-
-        prev.setNext(temp.getNext());
     }
 
-    public boolean search(Node head, String key) {
+    public Product search(Node head, String key) {
         Node current = head;
         while (current != null) {
             if (current.getInfo().getProductCode().equals(key)) {
-                System.out.println(current.getInfo());
-                return true;
+                return current.getInfo();
             }
             current = current.getNext();
         }
-        return false;
+        return null;
     }
 
     Node partitionLast(Node start, Node end) {
@@ -74,7 +65,7 @@ public class MyList {
 
         while (start != end) {
             int y = start.getInfo().getProductCode().compareTo(pivot.getProductCode());
-            if (y < 0) {
+            if (y > 0) {
                 pivot_prev = cur;
                 Product temp = cur.getInfo();
                 cur.setInfo(start.getInfo());

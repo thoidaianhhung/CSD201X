@@ -33,7 +33,7 @@ public class MyList {
             p = p.next;
         }
     }
-    void sort() {
+    /*void sort() {
         Node pi, pj;
         int t;
         pi = head;
@@ -50,5 +50,48 @@ public class MyList {
             pi = pi.next;
         }
 
+    }*/
+
+    Node partitionLast(Node start, Node end) {
+        if (start == end || start == null || end == null) {
+            return start;
+        }
+
+        Node pivot_prev = start;
+        Node cur = start;
+        int pivot = end.info;
+
+        while (start != end) {
+
+            if (start.info < pivot) {
+                pivot_prev = cur;
+                int temp = cur.info;
+                cur.info = start.info;
+                start.info = temp;
+                cur = cur.next;
+            }
+            start = start.next;
+        }
+        int temp = cur.info;
+        cur.info = end.info;
+        end.info = temp;
+
+        return pivot_prev;
+    }
+
+    public void sort(Node start, Node end) {
+        if (start == end) {
+            return;
+        }
+
+        Node pivot_prev = partitionLast(start, end);
+        sort(start, pivot_prev);
+
+        if (pivot_prev != null && pivot_prev == start) {
+            sort(pivot_prev.next, end);
+        }
+        else if (pivot_prev != null && pivot_prev.next != null) {
+            sort(pivot_prev.next.next, end);
+        }
     }
 }

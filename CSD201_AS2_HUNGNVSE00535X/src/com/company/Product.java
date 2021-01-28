@@ -13,8 +13,6 @@ public class Product {
         this.setQuantity(quantity);
     }
 
-    public Product() {}
-
     public String getProductCode() {
         return productCode;
     }
