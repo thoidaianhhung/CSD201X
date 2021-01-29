@@ -96,4 +96,11 @@ public class MyList {
             sort(pivot_prev.getNext().getNext(), end);
         }
     }
+
+    public int convertBinary(int number) {
+        if (number == 0) {
+            return 0;
+        }
+        return number % 2 + 10 * convertBinary(number / 2);
+    }
 }

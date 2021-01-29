@@ -1,6 +1,5 @@
 package com.company;
 
-import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
@@ -20,7 +19,7 @@ public class Main {
         System.out.println("0. Exit.");
     }
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws Exception {
         Scanner input = new Scanner(System.in);
         System.out.println();
         System.out.println("Welcome to the product management application.");
@@ -48,30 +47,20 @@ public class Main {
             }
 
             switch (choice) {
-                case 1:
-                    operationToProduct.getFileToLinkedList();
-                    break;
-                case 2:
-                    operationToProduct.createProduct();
-                    break;
-                case 3:
-                    operationToProduct.displayAll();
-                    break;
-                case 4:
-                    operationToProduct.writeAllItemToFile();
-                    break;
-                case 5:
-                    operationToProduct.index();
-                    break;
-                case 6:
-                    operationToProduct.deleteByProductCode();
-                    break;
-                case 7:
-                    operationToProduct.sortByProductCode();
-                    break;
-                case 11:
+                case 1 -> operationToProduct.getFileToLinkedList();
+                case 2 -> operationToProduct.createProduct();
+                case 3 -> operationToProduct.displayAll();
+                case 4 -> operationToProduct.writeAllItemToFile();
+                case 5 -> operationToProduct.index();
+                case 6 -> operationToProduct.deleteByProductCode();
+                case 7 -> operationToProduct.sortByProductCode();
+                case 8 -> operationToProduct.convertBinary();
+                case 9 -> operationToProduct.getFileToStack();
+                case 10 -> operationToProduct.getFileToQueue();
+                case 11 -> {
                     System.out.println("Good bye, have a nice day!");
                     System.exit(0);
+                }
             }
         }
     }
