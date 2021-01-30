@@ -1,5 +1,10 @@
 package com.company;
 
+/**
+ * initializing or defining the stack
+ * then completely erasing it from the memory
+ */
+
 import java.util.EmptyStackException;
 
 public class MyStack {

@@ -2,6 +2,10 @@ package com.company;
 
 import java.util.Scanner;
 
+
+/**
+ * class to create the menu and perform functions in the OperationToProduct class of the problem
+ */
 public class Main {
     public static void showMenu() {
         System.out.println("Choose one of this options: ");
@@ -29,6 +33,8 @@ public class Main {
             showMenu();
             System.out.print("Your choice: ");
             int choice = 0;
+
+            // Check choice is integer, if not, re-enter
             while (input.hasNext()) {
                 if (input.hasNextInt()) {
                     choice = Integer.parseInt(input.nextLine());

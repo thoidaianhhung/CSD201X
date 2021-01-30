@@ -1,5 +1,10 @@
 package com.company;
 
+/**
+ * The MyList class
+ * purpose contain method of the linked list
+ * params Node head
+ */
 public class MyList {
     Node head;
 
@@ -7,20 +12,31 @@ public class MyList {
         head = null;
     }
 
+    /**
+     * Add a node at the end liked list
+     * @param x
+     */
     public void append(Product x) {
         Node productNode = new Node(x);
+        // CIf the Linked List is empty, then make the new node as head
         if (head == null) {
             head = new Node(x);
             return;
         }
+        // This new node is going to be the last node, so make next of it as null
         productNode.setNext(null);
+        // Else traverse till the last node
         Node last = head;
         while (last.getNext() != null) {
             last = last.getNext();
         }
+        // Change the next of last node
         last.setNext(productNode);
     }
 
+    /**
+     * This method prints contents of linked list starting from the given node
+     */
     public void printList() {
         Node p = head;
         while (p != null) {
@@ -29,21 +45,34 @@ public class MyList {
         }
     }
 
+    /**
+     * Given a key, deletes the first occurrence of key in linked list
+     * @param key
+     */
     public void deleteNode(String key) {
         Node temp = head;
 
         int x = temp.getInfo().getProductCode().compareTo(key);
+        // If head node itself holds the key to be deleted
         if (x == 0) {
             head = temp.getNext();
             return;
         }
 
+        // change temp.next
         while (temp != null) {
             temp = temp.getNext();
         }
     }
 
+    /**
+     * Checks whether the value key is present in linked list
+     * @param head
+     * @param key
+     * @return
+     */
     public Product search(Node head, String key) {
+        // Initialize current
         Node current = head;
         while (current != null) {
             if (current.getInfo().getProductCode().equals(key)) {
@@ -81,6 +110,11 @@ public class MyList {
         return pivot_prev;
     }
 
+    /**
+     * the sorting happens exclusive of the end node
+     * @param start
+     * @param end
+     */
     public void sort(Node start, Node end) {
         if (start == end) {
             return;
@@ -97,6 +131,11 @@ public class MyList {
         }
     }
 
+    /**
+     * convert from base 10 to binary
+     * @param number
+     * @return
+     */
     public int convertBinary(int number) {
         if (number == 0) {
             return 0;

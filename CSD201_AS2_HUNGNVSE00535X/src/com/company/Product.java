@@ -1,5 +1,11 @@
 package com.company;
 
+/**
+ * The Product class
+ * Purpose contains information and behavior for the product
+ * Params String productCode, String title, double price, Integer quantity
+ * return productCode, title, price, quantity
+ */
 public class Product {
     private String productCode;
     private String title;

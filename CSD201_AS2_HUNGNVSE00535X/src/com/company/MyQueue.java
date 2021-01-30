@@ -1,5 +1,10 @@
 package com.company;
 
+/**
+ * initializing or defining the queue
+ * then completely erasing it from the memory
+ */
+
 public class MyQueue {
     Node head, tail;
     public MyQueue() {
