@@ -50,7 +50,7 @@ public class Main {
             switch(choice) {
                 case 1 -> myPerson.insert();
                 case 2 -> myPerson.inOrder();
-                case 3 -> myPerson.traversesBinarySearchTree();
+                case 3 -> myPerson.traversesBFSTree();
                 case 4 -> myPerson.searchPerson();
                 case 5 -> myPerson.deletePerson();
                 case 6 -> myPerson.balanced();
