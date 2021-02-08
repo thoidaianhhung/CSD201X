@@ -18,7 +18,7 @@ public class Main {
         System.out.println("0. Exit.");
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
 	    // write your code here
         System.out.println();
         System.out.println("Welcome to the manager records and find the shortest route.");

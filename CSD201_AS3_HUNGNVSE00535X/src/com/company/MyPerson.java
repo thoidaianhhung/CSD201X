@@ -17,7 +17,6 @@ public class MyPerson {
     public MyPerson() {}
 
     MyBinarySearchTree binarySearchTree = new MyBinarySearchTree();
-    MyQueue myQueue = new MyQueue();
 
     /**
      * The insert method purpose add new staff profiles to the binary search tree trees.
@@ -56,20 +55,30 @@ public class MyPerson {
     /**
      * The traversesBFSTree method browse trees by width use queue
      */
-    public void traversesBFSTree() {
-        Queue<Node> queue = new LinkedList<Node>();
-
+    public void traversesBFSTree() throws Exception {
+        binarySearchTree.traversesBFSTree(binarySearchTree.root);
     }
 
     /**
-     *
+     * @purpose find employee information by employee code in the BST tree
      */
-    public void searchPerson() {}
+    public void searchPerson() {
+        System.out.print("Search for ID: ");
+        Scanner input = new Scanner(System.in);
+        String key = input.nextLine();
+        binarySearchTree.searchBFSTree(binarySearchTree.root, key);
+    }
 
     /**
-     *
+     * @purpose Delete an employee profile based on the employee code in the BST tree
      */
-    public void deletePerson() {}
+    public void deletePerson() {
+        System.out.print("Delete for ID: ");
+        Scanner input = new Scanner(System.in);
+        String key = input.nextLine();
+        binarySearchTree.deletePerson(key);
+        inOrder();
+    }
 
     /**
      *
