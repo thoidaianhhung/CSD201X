@@ -24,7 +24,7 @@ public class Main {
         System.out.println("Welcome to the manager records and find the shortest route.");
         System.out.println();
         MyPerson myPerson = new MyPerson();
-        Graph graph = new Graph();
+        Graph graph = new Graph(6, 16);
         while (true) {
             showMenu();
             Scanner input = new Scanner(System.in);
@@ -54,7 +54,7 @@ public class Main {
                 case 4 -> myPerson.searchPerson();
                 case 5 -> myPerson.deletePerson();
                 case 6 -> myPerson.balancedBST();
-                case 7 -> graph.depthFirstSearch();
+                case 7 -> graph.displayVertices();
                 case 8 -> graph.pathDijkstra();
                 default -> {
                     System.out.println("Good bye, have a nice day!");

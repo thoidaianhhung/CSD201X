@@ -3,7 +3,7 @@ package com.company;
 import java.util.LinkedList;
 
 public class MyStack {
-    LinkedList<Node> t;
+    LinkedList<Integer> t;
 
     public MyStack() {
         t = new LinkedList<>();
@@ -13,11 +13,11 @@ public class MyStack {
         return t.isEmpty();
     }
 
-    public void push(Node x) {
+    public void push(int x) {
         t.add(x);
     }
 
-    public Node pop() {
+    public int pop() {
         return t.pop();
     }
 }
