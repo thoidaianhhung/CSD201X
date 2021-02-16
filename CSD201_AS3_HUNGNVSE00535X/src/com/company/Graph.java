@@ -1,7 +1,15 @@
 package com.company;
 
+import java.util.LinkedList;
+
 public class Graph {
-    public Graph() {}
+    // Number of vertices
+    int V;
+
+
+    public Graph() {
+
+    }
 
     public void pathDijkstra() {}
 

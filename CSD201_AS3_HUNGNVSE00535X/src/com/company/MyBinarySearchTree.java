@@ -1,8 +1,6 @@
 package com.company;
 
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.concurrent.LinkedTransferQueue;
+import java.util.Stack;
 
 /**
  * The MyBinarySearchTree purpose contains information and behavior of a search binary tree.
@@ -15,6 +13,7 @@ public class MyBinarySearchTree {
     public MyBinarySearchTree() {
         root = null;
     }
+
 
     /**
      * Purpose insert a new key in BST
@@ -167,5 +166,49 @@ public class MyBinarySearchTree {
             root = root.left;
         }
         return minValue;
+    }
+
+    public void storeBSTNode(Node root, Stack<Node> stack) {
+
+        // Base case
+        if (root == null) {
+            return;
+        }
+        // Store nodes in InOrder
+        storeBSTNode(root.left, stack);
+        stack.add(root);
+        storeBSTNode(root.right, stack);
+    }
+
+    public Node buildBST(Stack<Node> stack, int start, int end) {
+        // Base case
+        if (start > end) {
+            return null;
+        }
+
+        int mid = (start + end) / 2;
+        Node node = stack.get(mid);
+
+        node.left = buildBST(stack, start, mid - 1);
+        node.right = buildBST(stack, mid + 1, end);
+        return node;
+    }
+
+    public Node balancedBST(Node root) {
+        // Store nodes of given BST in sorted order
+        Stack<Node> nodes = new Stack<>();
+        storeBSTNode(root, nodes);
+
+        // Construct BST from nodes[]
+        int n = nodes.size();
+        return buildBST(nodes, 0, n - 1);
+    }
+
+    public void preOrder(Node node) {
+        if (node != null) {
+            System.out.println(node.info);
+            preOrder(node.left);
+            preOrder(node.right);
+        }
     }
 }

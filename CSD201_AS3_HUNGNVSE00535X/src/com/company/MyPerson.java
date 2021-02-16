@@ -83,5 +83,9 @@ public class MyPerson {
     /**
      *
      */
-    public void balanced() {}
+    public void balancedBST() {
+        binarySearchTree.root = binarySearchTree.balancedBST(binarySearchTree.root);
+        System.out.println("Preorder traversal of balanced BST is:");
+        binarySearchTree.preOrder(binarySearchTree.root);
+    }
 }

@@ -53,7 +53,7 @@ public class Main {
                 case 3 -> myPerson.traversesBFSTree();
                 case 4 -> myPerson.searchPerson();
                 case 5 -> myPerson.deletePerson();
-                case 6 -> myPerson.balanced();
+                case 6 -> myPerson.balancedBST();
                 case 7 -> graph.depthFirstSearch();
                 case 8 -> graph.pathDijkstra();
                 default -> {
