@@ -24,7 +24,7 @@ public class Main {
         System.out.println("Welcome to the manager records and find the shortest route.");
         System.out.println();
         MyPerson myPerson = new MyPerson();
-        Graph graph = new Graph(6, 16);
+        Graph graph = new Graph(7);
         while (true) {
             showMenu();
             Scanner input = new Scanner(System.in);

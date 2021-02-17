@@ -2,8 +2,6 @@ package com.company;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.LinkedList;
-import java.util.Queue;
 import java.util.Scanner;
 
 /**
