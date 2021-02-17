@@ -31,13 +31,14 @@ public class Graph {
             s = stack.peek();
             stack.pop();
             if (!visited.get(s)) {
-                switch (s) {
+                /*switch (s) {
                     case 0 -> System.out.print('A' + " ");
                     case 1 -> System.out.print('B' + " ");
                     case 2 -> System.out.print('C' + " ");
                     case 3 -> System.out.print('D' + " ");
                     case 4 -> System.out.println('E' + " ");
-                }
+                }*/
+                System.out.print(s + " ");
 
                 visited.set(s, true);
             }
