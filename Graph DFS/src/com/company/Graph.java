@@ -40,6 +40,10 @@ public class Graph {
                     case 3 -> System.out.print('D' + " ");
                     case 4 -> System.out.println('E' + " ");
                 }*/
+<<<<<<< HEAD
+=======
+                System.out.print(s + " ");
+>>>>>>> origin/master
 
                 System.out.print(s + " ");
                 visited.set(s, true);
