@@ -3,6 +3,9 @@ package com.company;
 import java.util.LinkedList;
 import java.util.Vector;
 
+/**
+ * The Graph class purpose the traverse all cities and find the shortest route
+ */
 public class Graph {
     public int V;
     public int noParent = -1;
