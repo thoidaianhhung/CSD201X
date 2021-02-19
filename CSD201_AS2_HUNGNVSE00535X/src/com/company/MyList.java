@@ -18,7 +18,7 @@ public class MyList {
      */
     public void append(Product x) {
         Node productNode = new Node(x);
-        // CIf the Linked List is empty, then make the new node as head
+        // If the Linked List is empty, then make the new node as head
         if (head == null) {
             head = new Node(x);
             return;
@@ -51,18 +51,26 @@ public class MyList {
      */
     public void deleteNode(String key) {
         Node temp = head;
+        Node prev = null;
 
-        int x = temp.getInfo().getProductCode().compareTo(key);
         // If head node itself holds the key to be deleted
-        if (x == 0) {
+        if (temp.getInfo().getProductCode().compareTo(key) == 0) {
             head = temp.getNext();
             return;
         }
 
         // change temp.next
-        while (temp != null) {
+        while (temp != null && temp.getInfo().getProductCode().compareTo(key) != 0) {
+            prev = temp;
             temp = temp.getNext();
         }
+
+        if (temp == null) {
+            return;
+        }
+
+        assert prev != null;
+        prev.setNext(temp.getNext());
     }
 
     /**
