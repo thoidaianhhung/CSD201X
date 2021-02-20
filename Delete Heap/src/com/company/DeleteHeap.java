@@ -4,7 +4,7 @@ public class DeleteHeap {
 
     public DeleteHeap() {}
 
-    public void heap(int[] arr, int n, int i) {
+    public void heapify(int[] arr, int n, int i) {
         int largest = i;
         int l = 2 * i + 1;
         int r = 2 * i + 2;
@@ -21,7 +21,7 @@ public class DeleteHeap {
             int temp = arr[i];
             arr[i] = arr[largest];
             arr[largest] = temp;
-            heap(arr, n, largest);
+            heapify(arr, n, largest);
         }
     }
 
@@ -29,7 +29,7 @@ public class DeleteHeap {
         int lastElement = arr[n - 1];
         arr[0] = lastElement;
         n = n -1;
-        heap(arr, n, 0);
+        heapify(arr, n, 0);
         return n;
     }
 
