@@ -83,9 +83,13 @@ public class OperationToProduct {
         System.out.print("Input the product code to delete = ");
         Scanner input = new Scanner(System.in);
         String key = input.nextLine();
-        myList.deleteNode(key);
+        if (myList.head != null) {
+            myList.deleteNode(key);
+            System.out.println("Delete!");
+        } else {
+            System.out.println("Head null!");
+        }
         displayAll();
-        System.out.println("Delete!");
     }
 
     /**
