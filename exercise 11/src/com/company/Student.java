@@ -15,7 +15,7 @@ public class Student {
         this.grad3 = grad3;
     }
 
-    public String toString(int ID, String name, float grad1, float grad2, float grad3) {
+    public String toString() {
         return String.format("%20d%20s%20f%20f%20f", ID, name, grad1, grad2, grad3);
     }
 }
