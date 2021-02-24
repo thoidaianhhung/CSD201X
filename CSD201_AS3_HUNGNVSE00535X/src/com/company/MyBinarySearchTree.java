@@ -34,6 +34,9 @@ public class MyBinarySearchTree {
             root.left = insertRecursive(root.left, key);
         } else if (mid > 0) {
             root.right = insertRecursive(root.right, key);
+        } else {
+            System.out.println("No insertion.");
+            return root;
         }
         return root;
     }
